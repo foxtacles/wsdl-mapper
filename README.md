@@ -1,5 +1,6 @@
 # WsdlMapper
 
+[![Gem Version](https://badge.fury.io/rb/wsdl-mapper.svg)](https://badge.fury.io/rb/wsdl-mapper)
 [![Build Status](https://travis-ci.org/cice/wsdl-mapper.svg?branch=master)](https://travis-ci.org/cice/wsdl-mapper)
 [![Code Climate](https://codeclimate.com/github/cice/wsdl-mapper/badges/gpa.svg)](https://codeclimate.com/github/cice/wsdl-mapper)
 [![Coverage Status](https://coveralls.io/repos/github/cice/wsdl-mapper/badge.svg?branch=master)](https://coveralls.io/github/cice/wsdl-mapper?branch=master)
