@@ -64,8 +64,14 @@ module WsdlMapper
           @wrapper = nil
           return
         end
-        if @skipping == Name.get(uri, name)
-          @skipping = nil
+        if @skipping
+          # Check if the sub-tree-to-skip is at its end
+          # TODO: edge case of nested same-element
+          if @skipping == Name.get(uri, name)
+            @skipping = nil
+            return
+          end
+          # If we are skipping this sub-tree, just return
           return
         end
         @current_frame.text = @buffer
