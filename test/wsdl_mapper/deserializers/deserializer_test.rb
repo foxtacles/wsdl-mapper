@@ -127,6 +127,24 @@ XML
       assert_equal Name.get(nil, 'something-unknown'), error.name
     end
 
+    def test_skip_on_unknown_element
+      xml = <<XML
+<?xml version="1.0" encoding="UTF-8"?>
+<note uuid="ABCD-1234">
+  <to>to@example.org</to>
+  <dateTime>2002-05-30T09:30:10-06:00</dateTime>
+  <something-unknown><and-more-unknown/></something-unknown>
+</note>
+XML
+
+      deserializer = Deserializer.new skip_unknown_elements: true
+      deserializer.register_element [nil, 'note'], [nil, 'noteType']
+      deserializer.register_type [nil, 'noteType'], NoteTypeMapping
+
+      obj = deserializer.from_xml xml
+      assert_kind_of NoteType, obj
+    end
+
     def test_raise_on_unknown_root
       xml = <<XML
 <?xml version="1.0" encoding="UTF-8"?>
