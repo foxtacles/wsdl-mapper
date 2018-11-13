@@ -1,7 +1,6 @@
 # WsdlMapper
 
 [![Build Status](https://travis-ci.org/cice/wsdl-mapper.svg?branch=master)](https://travis-ci.org/cice/wsdl-mapper)
-[![Dependency Status](https://gemnasium.com/badges/github.com/cice/wsdl-mapper.svg)](https://gemnasium.com/github.com/cice/wsdl-mapper)
 [![Code Climate](https://codeclimate.com/github/cice/wsdl-mapper/badges/gpa.svg)](https://codeclimate.com/github/cice/wsdl-mapper)
 [![Coverage Status](https://coveralls.io/repos/github/cice/wsdl-mapper/badge.svg?branch=master)](https://coveralls.io/github/cice/wsdl-mapper?branch=master)
 [![Documentation](https://img.shields.io/badge/doc-rubydoc-green.svg)](http://www.rubydoc.info/github/cice/wsdl-mapper/master)
