@@ -7,7 +7,7 @@ module WsdlMapper
   module DomParsing
     class DefaultResolver < AbstractResolver
 
-      def initialize(path)
+      def initialize(path = Dir.pwd)
         @file_resolver = LocalFileResolver.new path
         @url_resolver = UrlResolver.new
       end

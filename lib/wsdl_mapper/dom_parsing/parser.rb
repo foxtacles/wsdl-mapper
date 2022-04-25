@@ -12,6 +12,8 @@ require 'wsdl_mapper/dom/schema'
 require 'wsdl_mapper/dom/namespaces'
 require 'wsdl_mapper/dom_parsing/linker'
 
+require 'wsdl_mapper/dom_parsing/default_resolver'
+
 module WsdlMapper
   module DomParsing
     class Parser < ParserBase
@@ -24,7 +26,7 @@ module WsdlMapper
       attr_reader :schema, :parsers, :namespaces, :target_namespace, :default_namespace, :log_msgs, :import_resolver
 
       # @param [WsdlMapper::DomParsing::AbstractResolver] import_resolver
-      def initialize(import_resolver: nil)
+      def initialize(import_resolver: DefaultResolver.new)
         @base = self
         @schema = WsdlMapper::Dom::Schema.new
 
