@@ -53,6 +53,10 @@ module WsdlMapper
         @module_generator ||= WsdlMapper::Generation::DefaultModuleGenerator.new schema_generator
       end
 
+      def import_resolver
+        @import_resolver ||= DomParsing::DefaultResolver.new
+      end
+
       def generate
         desc, schema = parser.parse document
 
@@ -71,7 +75,7 @@ module WsdlMapper
       end
 
       def parser
-        @parser ||= WsdlMapper::SvcDescParsing::Parser.new
+        @parser ||= WsdlMapper::SvcDescParsing::Parser.new(import_resolver: import_resolver)
       end
     end
   end

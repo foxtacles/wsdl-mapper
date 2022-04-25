@@ -52,7 +52,11 @@ module WsdlMapper
       end
 
       def parser
-        @parser ||= WsdlMapper::DomParsing::Parser.new
+        @parser ||= WsdlMapper::DomParsing::Parser.new(import_resolver: import_resolver)
+      end
+
+      def import_resolver
+        @import_resolver ||= DefaultResolver.new
       end
     end
   end

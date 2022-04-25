@@ -20,7 +20,7 @@ module WsdlMapper
       end
 
       def parse_schema(node)
-        parser = WsdlMapper::DomParsing::Parser.new
+        parser = WsdlMapper::DomParsing::Parser.new(import_resolver: @base.import_resolver)
         @base.description.add_schema parser.parse(node, parse_only: true)
         parser.log_msgs.each do |msg|
           @base.log_msgs << msg

@@ -17,11 +17,12 @@ module WsdlMapper
     class Parser < WsdlMapper::Parsing::Base
       include WsdlMapper::SvcDescParsing::Wsdl11
 
-      attr_reader :description, :parsers, :namespaces, :target_namespace, :default_namespace, :log_msgs
+      attr_reader :description, :parsers, :namespaces, :target_namespace, :default_namespace, :log_msgs, :import_resolver
 
-      def initialize
+      def initialize(import_resolver: DomParsing::DefaultResolver.new)
         @base = self
         @description = WsdlMapper::SvcDesc::Wsdl11::Description.new
+        @import_resolver = import_resolver
 
         @parsers = {
           MESSAGE => MessageParser.new(self),
