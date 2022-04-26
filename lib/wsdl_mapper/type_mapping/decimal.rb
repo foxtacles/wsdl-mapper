@@ -11,7 +11,7 @@ module WsdlMapper
       ]
 
       def to_ruby(string)
-        BigDecimal.new string.to_s
+        string.empty? ? nil : BigDecimal(string.to_s)
       end
 
       def to_xml(object)
